@@ -47,7 +47,7 @@
                     return;
                 }
 
-                var url = "https://app.franfunnel.com/app/lead/" + franFunnelId;
+                var url = "https://app.staging.franfunnel.com/app/lead/" + franFunnelId + "?ui_mode=embedded";
                 var frame = document.getElementById("franfunnel-frame");
                 frame.src = url;
                 frame.style.display = "block";
