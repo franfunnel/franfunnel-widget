@@ -76,7 +76,10 @@
                     return;
                 }
 
-                var url = "https://app.franfunnel.com/app/lead/" + franFunnelId + "?ui_mode=embedded";
+                var urlParams = new URLSearchParams(window.location.search);
+                var env = urlParams.get('env');
+                var baseUrl = (env === 'staging') ? 'https://staging.franfunnel.com' : 'https://app.franfunnel.com';
+                var url = baseUrl + "/app/lead/" + franFunnelId + "?ui_mode=embedded";
                 var frame = document.getElementById("franfunnel-frame");
                 frame.src = url;
                 frame.style.display = "block";
